@@ -10,7 +10,7 @@ procedure:
 3. win+r : shell:startup
 4. deploy the file into the startup folder
 5. double click the file
-*6. edit the file based on demand
+6. *edit the file based on demand
 
 required tool:
 AUTOHOTKEY LINK
