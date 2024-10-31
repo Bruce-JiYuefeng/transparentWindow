@@ -1,21 +1,46 @@
-# transparentWindow
-You can make any window transparent or keep it at the top.
+# Transparent Window
 
-environment:
-Windows only for now
+Make any window transparent and keep it at the top of your screen.
 
-procedure:
-1. download aotohotkey
-2. download the file
-3. win+r : shell:startup
-4. deploy the file into the startup folder
-5. double click the file
-6. *edit the file based on demand
+## Supported Environments
 
-required tool:
-AUTOHOTKEY LINK
-https://www.autohotkey.com/
+- **Windows:** Available now
+- **Mac:** Coming soon
 
-reference:
-https://www.youtube.com/watch?v=uUVs9xT7lPo
-https://github.com/kimjunte/transpare...
+---
+
+## Procedure
+
+### For Windows:
+
+1. **Download AutoHotkey:**
+   - [AutoHotkey Download](https://www.autohotkey.com/)
+
+2. **Download the TransparentWindow File.**
+
+3. **Add to Startup:**
+   - Press `Win + R` and type `shell:startup`, then press Enter.
+   - Place the file into the `Startup` folder.
+
+4. **Run the File:**
+   - Double-click the file to start.
+
+5. **Customize as Needed:**
+   - Open the file in a text editor and edit it based on your requirements.
+
+---
+
+## Required Tools
+
+- **For Windows:** AutoHotkey
+
+---
+
+## References
+
+- [Tutorial Video](https://www.youtube.com/watch?v=uUVs9xT7lPo)
+- [GitHub Repository](https://github.com/kimjunte/transpare...)
+
+---
+
+Enjoy!
