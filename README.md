@@ -38,8 +38,7 @@ Make any window transparent and keep it at the top of your screen.
 
 ## References
 
-- [Tutorial Video](https://www.youtube.com/watch?v=uUVs9xT7lPo)
-- [GitHub Repository](https://github.com/kimjunte/transpare...)
+- [Original Video](https://www.youtube.com/watch?v=uUVs9xT7lPo)
 
 ---
 
