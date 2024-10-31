@@ -28,6 +28,10 @@ Make any window transparent and keep it at the top of your screen.
 5. **Customize as Needed:**
    - Open the file in a text editor and edit it based on your requirements.
 
+6. **Use it!:**
+   - ctrl+alt+right click to the window ==> transparent.
+   - ctrl+alt+T to the window ==> stay on top.
+
 ---
 
 ## Required Tools
