@@ -37,6 +37,9 @@ Make any window transparent and keep it at the top of your screen.
 ### For MacOS:
 
 connection established... 
+try push from vsCode
+
+---
 
 ## Required Tools
 
