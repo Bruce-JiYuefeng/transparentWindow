@@ -1,0 +1,5 @@
+# Toggle window transparency - Ctrl + Alt + Right Mouse Button
+ctrl + shift + r : yabai -m window --toggle opacity
+
+# Toggle Always on Top status - Ctrl + Alt + T
+ctrl + shift + t : yabai -m window --toggle topmost

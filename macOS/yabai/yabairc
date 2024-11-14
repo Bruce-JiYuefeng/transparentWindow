@@ -1,0 +1,95 @@
+#!/usr/bin/env sh
+
+# #############################################################################
+# Do not delete the `UNIQUE_ID` line below, I use it to backup original files
+# so they're not lost when my symlinks are applied
+# UNIQUE_ID=do_not_delete_this_line
+# #############################################################################
+
+# This command is the one that loads the scripting addition
+# Ensure yabai has necessary permissions to inject into Dock.app
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+###############################################################################
+#                           Display and Padding Settings
+###############################################################################
+
+# Configure custom padding depending on display resolution
+if command -v sketchybar &>/dev/null; then
+  display_resolution=$(system_profiler SPDisplaysDataType | grep Resolution)
+  if [[ "$display_resolution" == *"3456 x 2234"* ]]; then
+    yabai -m config top_padding 12
+  else
+    yabai -m config top_padding 39
+  fi
+else
+  yabai -m config top_padding 02
+  yabai -m config bottom_padding 00
+fi
+
+# Additional padding configurations for layout
+yabai -m config left_padding 180
+yabai -m config right_padding 05
+
+###############################################################################
+#                             Transparency Settings
+###############################################################################
+
+# Enable opacity control for windows
+yabai -m config window_opacity on
+
+# Configure transparency for specific applications
+apps_transparent="(Spotify|Alacritty|kitty)"
+yabai -m signal --add event=window_focused app="^${apps_transparent}$" action="yabai -m config active_window_opacity 0.85"
+yabai -m signal --add event=window_focused app="^${apps_transparent}$" action="yabai -m config normal_window_opacity 0.00001"
+
+# Reset opacity when other applications gain focus
+yabai -m signal --add event=window_focused app!="^${apps_transparent}$" action="yabai -m config active_window_opacity 1.0"
+yabai -m signal --add event=window_focused app!="^${apps_transparent}$" action="yabai -m config normal_window_opacity 1.0"
+
+###############################################################################
+#                         Window Layer and Always on Top
+###############################################################################
+
+# Set all apps to the "normal" sub-layer to prevent conflicts with floating windows
+yabai -m rule --add app=".*" sub-layer=normal
+
+# Configure Always on Top behavior
+# The `topmost` flag will be toggled through skhd shortcuts (defined in skhdrc)
+# Here, we set up the initial state and rules for management.
+
+###############################################################################
+#                              Excluded Apps
+###############################################################################
+
+# Exclude specific applications from yabai’s window management
+apps_mgoff_normal="(Calculator|iStat Menus|Hammerspoon|BetterDisplay|GIMP|Notes|System Preferences|System Settings|Activity Monitor|App Store|CleanShot X|Karabiner-Elements|TestRig)"
+yabai -m rule --add app="^${apps_mgoff_normal}$" manage=off
+
+###############################################################################
+#                               Layout Settings
+###############################################################################
+
+# Configure the layout mode
+yabai -m config layout stack
+
+###############################################################################
+#                              Custom Signals
+###############################################################################
+
+# Trigger SketchyBar to update based on focused window changes
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+
+###############################################################################
+#                              Default Configurations
+###############################################################################
+
+yabai -m config \
+  focus_follows_mouse off \
+  window_opacity_duration 0.0 \
+  split_ratio 0.50 \
+  window_gap 06 \
+  mouse_modifier fn \
+  mouse_action1 move \
+  mouse_action2 resize

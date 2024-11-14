@@ -32,13 +32,14 @@ Make any window transparent and keep it at the top of your screen.
    - ctrl+alt+right click to the window ==> transparent.
    - ctrl+alt+T to the window ==> stay on top.
 
----
+-
 
 ### For MacOS:
 
-connection established... 
-try push from vsCode
+basic code completed... developing...
 
+afloat and afloatX both not work properly and lots of people have reponded the same issues. This one is an alternative solution.
+Please leave a comment to let me know if you have a better solution or if there's any update on afloat or floatX.
 ---
 
 ## Required Tools
@@ -49,7 +50,13 @@ try push from vsCode
 
 ## References
 
+For Windows:
 - [Original Video](https://www.youtube.com/watch?v=uUVs9xT7lPo)
+
+For MacOS:
+-  https://linkarzu.com/posts/2024-macos-workflow/setup-yabai/#configure-the-scripting-addition
+
+
 
 ---
 
