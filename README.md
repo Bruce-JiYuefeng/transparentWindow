@@ -34,6 +34,10 @@ Make any window transparent and keep it at the top of your screen.
 
 ---
 
+### For MacOS:
+
+connection established... 
+
 ## Required Tools
 
 - **For Windows:** AutoHotkey
